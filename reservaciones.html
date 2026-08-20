@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Banquete del Puerto - Reservaciones</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">El Banquete del Puerto</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="reservaciones.html" class="active">Reservaciones</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="form-container">
+      <h1 class="section-title">Reserva tu Mesa</h1>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="nombre">Nombre Completo</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre">
+        </div>
+
+        <div class="form-group">
+          <label for="personas">Número de Personas</label>
+          <input type="number" id="personas" name="personas" min="1" max="20" required placeholder="Ej. 4">
+        </div>
+
+        <div class="form-group">
+          <label for="fecha">Fecha de Reserva</label>
+          <input type="date" id="fecha" name="fecha" required>
+        </div>
+
+        <div class="form-group">
+          <label for="hora">Hora de Reserva</label>
+          <input type="time" id="hora" name="hora" required>
+        </div>
+
+        <div class="form-group">
+          <label for="zona">Zona del Restaurante</label>
+          <select id="zona" name="zona" required>
+            <option value="">-- Selecciona una zona --</option>
+            <option value="principal">Salón Principal</option>
+            <option value="terraza">Terraza al Aire Libre</option>
+            <option value="vip">Zona VIP / Privada</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary btn-full">Confirmar Reserva</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 El Banquete del Puerto. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
+     

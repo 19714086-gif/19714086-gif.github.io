@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Banquete del Puerto - Contacto</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">El Banquete del Puerto</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="reservaciones.html">Reservaciones</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="form-container">
+      <h1 class="section-title">Contáctanos</h1>
+      
+      <!-- Mapa Interactivo en Iframe -->
+      <div class="map-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.0381676648713!2d-89.2215682857417!3d13.691880990386345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6330379203200b%3A0xb3516c5b96a928e!2sSan%20Salvador!5e0!3m2!1ses!2ssv!4v1620000000000!5m2!1ses!2ssv" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- Dirección con clase CSS limpia -->
+      <address class="info-contacto">
+        <p><strong>Dirección:</strong> Av. Gastronómica #123, San Salvador</p>
+        <p><strong>Teléfono:</strong> +503 2222-0000</p>
+        <p><strong>Correo:</strong> contacto@elbanquetedelpuerto.com</p>
+      </address>
+
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="nombre_contacto">Nombre Completo</label>
+          <input type="text" id="nombre_contacto" name="nombre" required placeholder="Tu nombre">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escribe tu mensaje..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary btn-full">Enviar Mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 El Banquete del Puerto. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
