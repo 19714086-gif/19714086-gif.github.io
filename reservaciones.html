@@ -3,64 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El Banquete del Puerto - Reservaciones</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Reservaciones -  El Banquete del Puerto.</title>
+  <link rel="stylesheet" href="miestilo.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html" class="logo">El Banquete del Puerto</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="menu.html">Menú</a></li>
-        <li><a href="reservaciones.html" class="active">Reservaciones</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
+
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo"> El Banquete del Puerto.</a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="menu.html" class="nav-link">Menú</a></li>
+          <li><a href="reservas.html" class="nav-link active">Reservas</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+          <li><a href="login.html" class="nav-link">Iniciar Sesion</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main class="container">
     <section class="form-container">
-      <h1 class="section-title">Reserva tu Mesa</h1>
+      <h2>Reserva tu Mesa</h2>
       
-      <form action="menu.html" method="get">
+      <!-- Formulario de reserva -->
+      <form id="reserva-form">
         <div class="form-group">
-          <label for="nombre">Nombre Completo</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre">
+          <label for="personas">Número de Personas:</label>
+          <input type="number" id="personas" class="form-control" min="1" max="20" required>
         </div>
 
         <div class="form-group">
-          <label for="personas">Número de Personas</label>
-          <input type="number" id="personas" name="personas" min="1" max="20" required placeholder="Ej. 4">
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" class="form-control" required>
         </div>
 
         <div class="form-group">
-          <label for="fecha">Fecha de Reserva</label>
-          <input type="date" id="fecha" name="fecha" required>
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" class="form-control" required>
         </div>
 
         <div class="form-group">
-          <label for="hora">Hora de Reserva</label>
-          <input type="time" id="hora" name="hora" required>
-        </div>
-
-        <div class="form-group">
-          <label for="zona">Zona del Restaurante</label>
-          <select id="zona" name="zona" required>
-            <option value="">-- Selecciona una zona --</option>
-            <option value="principal">Salón Principal</option>
-            <option value="terraza">Terraza al Aire Libre</option>
-            <option value="vip">Zona VIP / Privada</option>
+          <label for="zona">Zona del Restaurante:</label>
+          <select id="zona" class="form-select form-control" required>
+            <option value="">Selecciona una zona...</option>
+            <option value="Terraza al aire libre">Terraza al aire libre</option>
+            <option value="Comedor Principal">Comedor Principal</option>
+            <option value="Zona VIP">Zona VIP</option>
           </select>
         </div>
 
-        <a href="index.html"> <button type="submit" class="btn-primary btn-full">Confirmar Reserva</button></a>
+        <button type="submit" class="btn-primary" style="width: 100%;">Confirmar Reserva</button>
       </form>
+
+   
       <div id="mensaje-exito" class="alert-success" style="display: none;">
         <h3>¡Reserva Confirmada! 🎉</h3>
-        <p>Tu mesa ha sido reservada con éxito. Te esperamos en <strong>La Pampa & Carbón</strong>.</p>
+        <p>Tu mesa ha sido reservada con éxito. Te esperamos en <strong> El Banquete del Puerto.</strong>.</p>
         <div class="reserva-detalles">
           <p><strong>Personas:</strong> <span id="res-personas"></span></p>
           <p><strong>Fecha:</strong> <span id="res-fecha"></span></p>
@@ -68,14 +68,40 @@
           <p><strong>Zona:</strong> <span id="res-zona"></span></p>
         </div>
         <button onclick="location.reload()" class="btn-primary" style="margin-top: 15px;">Hacer otra reserva</button>
-         <button onclick="location.reload()" class="btn-primary" style="margin-top: 15px;">Menu</button>
+         <button onclick="location.reload()" class="btn-primary" style="margin-top: 15px;"> <li><a href="index.html" class="nav-link">Inicio</a></li></button>
+         
       </div>
+
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 El Banquete del Puerto. Todos los derechos reservados.</p>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Restaurante El Banquete del Puerto. Todos los derechos reservados.</p>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById('reserva-form').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+
+     
+      const personas = document.getElementById('personas').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+      const zona = document.getElementById('zona').value;
+
+      
+      document.getElementById('res-personas').textContent = personas;
+      document.getElementById('res-fecha').textContent = fecha;
+      document.getElementById('res-hora').textContent = hora;
+      document.getElementById('res-zona').textContent = zona;
+
+      
+      document.getElementById('reserva-form').style.display = 'none';
+      document.getElementById('mensaje-exito').style.display = 'block';
+    });
+  </script>
+
 </body>
 </html>
-     
