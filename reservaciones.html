@@ -24,7 +24,9 @@
   <main class="container">
     <section class="form-container">
       <h1 class="section-title">Reserva tu Mesa</h1>
-      <form action="#" method="POST">
+      
+      <!-- IMPORTANTE: El action apunta al ID #confirmacion -->
+      <form action="#confirmacion" method="GET">
         <div class="form-group">
           <label for="nombre">Nombre Completo</label>
           <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre">
@@ -58,18 +60,13 @@
         <button type="submit" class="btn-primary btn-full">Confirmar Reserva</button>
       </form>
     </section>
- <div id="confirmacion-reserva" class="confirm-box">
-      <div class="confirm-content">
-        <div class="confirm-icon">&#10004;</div>
-        <h2>¡Reserva Confirmada con Éxito!</h2>
-        <p>Tu solicitud ha sido registrada correctamente en <strong>El Banquete del Puerto</strong>.</p>
-        <div class="confirm-details">
-          <p><strong>Estado:</strong> <span class="badge-success">Confirmada</span></p>
-          <p><strong>Código de Folio:</strong> #EBP-2026-9941</p>
-          <p><strong>Nota:</strong> Presenta este comprobante o tu nombre al llegar al establecimiento.</p>
-        </div>
-        <a href="reservaciones.html" class="btn-primary">Realizar otra reserva</a>
-      </div>
+
+    <!-- Este bloque estará oculto hasta que el usuario envíe el formulario -->
+    <div id="confirmacion" class="confirm-box">
+      <div class="confirm-icon">&#10004;</div>
+      <h2>¡Reserva Confirmada con Éxito!</h2>
+      <p>Tu solicitud ha sido registrada correctamente en <strong>El Banquete del Puerto</strong>.</p>
+      <a href="reservaciones.html" class="btn-primary" style="margin-top: 1rem;">Realizar otra reserva</a>
     </div>
   </main>
 
